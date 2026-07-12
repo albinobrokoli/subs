@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@source "../app";
+@source "../components";
+@source "../lib";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border-soft: var(--border-soft);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-positive: var(--positive);
+
+  --radius-xl: 1.25rem;
+}
+
+:root {
+  /* deep midnight base */
+  --background: #070912;
+  --foreground: #eef1f8;
+  --surface: rgba(24, 28, 44, 0.55);
+  --surface-2: rgba(34, 39, 60, 0.6);
+  --border-soft: rgba(255, 255, 255, 0.08);
+  --muted: #8a90a6;
+  --accent: #6d7dff;
+  --accent-2: #a78bfa;
+  --positive: #4ade80;
+}
+
+* {
+  border-color: var(--border-soft);
+}
+
+html {
+  background-color: var(--background);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* app atmosphere: subtle indigo bloom */
+.app-atmosphere {
+  background:
+    radial-gradient(1100px 700px at 12% -8%, rgba(109, 125, 255, 0.16), transparent 60%),
+    radial-gradient(900px 600px at 100% 0%, rgba(167, 139, 250, 0.12), transparent 55%),
+    radial-gradient(700px 500px at 50% 110%, rgba(45, 55, 110, 0.25), transparent 60%),
+    var(--background);
+}
+
+/* liquid glass */
+.glass {
+  background: var(--surface);
+  backdrop-filter: blur(28px) saturate(140%);
+  -webkit-backdrop-filter: blur(28px) saturate(140%);
+  border: 1px solid var(--border-soft);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.06) inset,
+    0 20px 50px -20px rgba(0, 0, 0, 0.7);
+}
+
+.glass-2 {
+  background: var(--surface-2);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid var(--border-soft);
+}
+
+.card-sheen {
+  position: relative;
+  overflow: hidden;
+}
+.card-sheen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.07), transparent 42%);
+  pointer-events: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.no-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+.no-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-rise {
+  animation: rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
