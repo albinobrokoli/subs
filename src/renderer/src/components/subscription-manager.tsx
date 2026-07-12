@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } fro
 import {
   LayoutDashboard,
   Calendar as CalIcon,
+  CalendarDays,
   Tag,
   Layers,
   Settings,
@@ -17,6 +18,8 @@ import {
   Archive,
   Bell,
   X,
+  Wallet,
+  PackageOpen,
   Upload,
   Image as ImageIcon,
 } from 'lucide-react'
@@ -85,7 +88,7 @@ function catName(cats: Category[], id: string) {
   return cats.find((c) => c.id === id)?.name ?? ''
 }
 
-function StatCard({ label, value }: { label: string; value: string }) {
+function StatCard({ label, value, icon, accent }: { label: string; value: string; icon?: React.ReactNode; accent?: string }) {
   const ref = useRef<HTMLDivElement>(null)
   const [tilt, setTilt] = useState({ rx: 0, ry: 0, gx: 50, gy: 50 })
   const [hover, setHover] = useState(false)
@@ -113,10 +116,19 @@ function StatCard({ label, value }: { label: string; value: string }) {
         transition: hover ? 'transform 0.05s linear' : 'transform 0.4s cubic-bezier(0.22,1,0.36,1)',
         ['--gx' as any]: `${tilt.gx}%`,
         ['--gy' as any]: `${tilt.gy}%`,
+        borderColor: hover && accent ? `${accent}66` : undefined,
+        boxShadow: hover && accent ? `0 0 24px -8px ${accent}, inset 0 1px 0 0 rgba(255,255,255,0.12)` : undefined,
       }}
     >
-      <div className="label">{label}</div>
-      <div className="value money">{value}</div>
+      {icon && (
+        <div className="stat-icon" style={{ color: accent || '#2f6bff', background: `${accent || '#2f6bff'}1f` }}>
+          {icon}
+        </div>
+      )}
+      <div>
+        <div className="label">{label}</div>
+        <div className="value money">{value}</div>
+      </div>
     </div>
   )
 }
@@ -173,7 +185,6 @@ function TiltCard({
           style={{ backgroundImage: `url(${bg})`, transform: `translate(${(tilt.gx - 50) * -0.04}px, ${(tilt.gy - 50) * -0.04}px) scale(1.12)` }}
         />
       )}
-      <div className="tilt-glass" />
       <div className="tilt-content">
         <ServiceIcon name={sub.name} accent={sub.accent} size={64} iconKey={sub.iconKey} />
         <div style={{ fontSize: 22, fontWeight: 650 }}>{sub.name}</div>
@@ -547,15 +558,6 @@ export default function SubscriptionManager() {
 
   const headActions = (
     <div className="no-drag" style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 8 }}>
-      <button
-        type="button"
-        className="icon-btn liquid-glass-2"
-        onClick={() => setSidebarOpen((v) => !v)}
-        aria-label="Kenar çubuğunu aç/kapat"
-        title="Kenar çubuğu"
-      >
-        <PanelLeft size={16} />
-      </button>
       {view !== 'form' && view !== 'settings' && view !== 'about' && (
         <>
           <button type="button" className="icon-btn liquid-glass-2" onClick={openNew} aria-label="Ekle">
@@ -694,7 +696,18 @@ export default function SubscriptionManager() {
     <div className={`app-shell ${sidebarOpen ? '' : 'sb-collapsed'}`}>
       {sidebarOpen && (
         <aside className="liquid-glass sb">
-          <div className="sb-top drag-region" />
+          <div className="sb-top no-drag" style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '0 10px' }}>
+            <button
+              type="button"
+              className="icon-btn liquid-glass-2"
+              onClick={() => setSidebarOpen(false)}
+              aria-label="Kenar çubuğunu gizle"
+              title="Kenar çubuğunu gizle"
+            >
+              <PanelLeft size={16} />
+            </button>
+            <span style={{ fontSize: 12.5, fontWeight: 650, letterSpacing: '0.02em', color: 'rgba(243,244,246,0.85)' }}>Subs</span>
+          </div>
           <nav className="sb-nav no-drag scroll-y">
           <NavItem
             active={view === 'dashboard'}
@@ -750,6 +763,7 @@ export default function SubscriptionManager() {
                         key={s.id}
                         type="button"
                         className={`sb-sub ${view === 'subs' && selectedId === s.id ? 'active' : ''}`}
+                        style={{ ['--cat' as any]: cat.color } as React.CSSProperties}
                         onClick={() => {
                           setSelectedId(s.id)
                           setView('subs')
@@ -773,17 +787,21 @@ export default function SubscriptionManager() {
                   <span>Askıya Alınanlar</span>
                   <span className="faint" style={{ marginLeft: 'auto', fontSize: 11 }}>{archived.length}</span>
                 </div>
-                {archived.map((s) => (
+                {archived.map((s) => {
+                  const ac = categories.find((c) => c.id === s.categoryId)
+                  return (
                   <button
                     key={s.id}
                     type="button"
                     className={`sb-sub archived ${view === 'subs' && selectedId === s.id ? 'active' : ''}`}
+                    style={{ ['--cat' as any]: ac?.color || '#64748b' } as React.CSSProperties}
                     onClick={() => { setSelectedId(s.id); setView('subs') }}
                   >
                     <ServiceIcon name={s.name} accent={s.accent} size={18} iconKey={s.iconKey} />
                     <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1 }}>{s.name}</span>
                   </button>
-                ))}
+                  )
+                })}
               </div>
             )
           })()}
@@ -803,6 +821,17 @@ export default function SubscriptionManager() {
           />
         </div>
         </aside>
+      )}
+      {!sidebarOpen && (
+        <button
+          type="button"
+          className="icon-btn liquid-glass sb-reveal"
+          onClick={() => setSidebarOpen(true)}
+          aria-label="Kenar çubuğunu aç"
+          title="Kenar çubuğunu aç"
+        >
+          <PanelLeft size={16} />
+        </button>
       )}
 
       <section className="liquid-glass main">
@@ -972,9 +1001,9 @@ function Dashboard({
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
       <div className="stat-grid">
-        <StatCard label={`Tahmini toplam (${PERIOD_TR[period]})`} value={formatMoney(estimated, currency)} />
-        <StatCard label="Günlük ortalama" value={formatMoney(avgPer, currency)} />
-        <StatCard label={`${paidCount + freeCount} abonelik`} value={`${freeCount} ücretsiz`} />
+        <StatCard label={`Tahmini toplam (${PERIOD_TR[period]})`} value={formatMoney(estimated, currency)} icon={<Wallet size={18} />} accent="#2f6bff" />
+        <StatCard label="Günlük ortalama" value={formatMoney(avgPer, currency)} icon={<CalendarDays size={18} />} accent="#818cf8" />
+        <StatCard label={`${paidCount + freeCount} abonelik`} value={`${freeCount} ücretsiz`} icon={<Layers size={18} />} accent="#38bdf8" />
       </div>
 
       <div className="chip-row">
@@ -1015,8 +1044,11 @@ function Dashboard({
               return (
                 <div key={day} className="timeline-day">
                   {items[0] && (
-                    <div className="timeline-dot" title={items.map((x) => x.name).join(', ')}>
-                      <ServiceIcon name={items[0].name} accent={items[0].accent} size={16} iconKey={items[0].iconKey} />
+                    <div
+                      className="timeline-dot"
+                      title={items.map((x) => `${x.name} · ${x.price === 0 ? 'Ücretsiz' : formatMoney(x.price, x.currency)}`).join('  •  ')}
+                    >
+                      <ServiceIcon name={items[0].name} accent={items[0].accent} size={20} iconKey={items[0].iconKey} />
                     </div>
                   )}
                   {day}
@@ -1066,14 +1098,15 @@ function Dashboard({
         </div>
         <div className="spend-bars">
           {spendMonths.map((m, i) => {
-            const h = monthly > 0 ? Math.max(4, (m.value / (monthly || 1)) * 130) : 4
+            const maxVal = Math.max(...spendMonths.map((x) => x.value), 1)
+            const hPct = m.value > 0 ? Math.max(6, (m.value / maxVal) * 100) : 3
             const isSel = spendTip?.i === i
             return (
-              <div key={i} className="spend-col" style={{ cursor: m.value ? 'pointer' : 'default' }} onClick={() => m.value ? setSpendTip({ i, subs: active }) : undefined}>
-                <div className="spend-bar-wrap" style={{ height: 150, display: 'flex', alignItems: 'flex-end' }}>
+              <div key={i} className="spend-col" style={{ cursor: m.value ? 'pointer' : 'default' }} onClick={() => (m.value ? setSpendTip({ i, subs: active }) : undefined)}>
+                <div className="spend-bar-track">
                   <div
                     className={`spend-bar ${i === 11 ? 'hi' : ''} ${isSel ? 'sel' : ''}`}
-                    style={{ height: m.value ? h : 4, opacity: m.value ? 1 : 0.18 }}
+                    style={{ height: `${hPct}%`, opacity: m.value ? 1 : 0.2 }}
                   />
                 </div>
                 <div className="spend-m">{m.label}</div>
@@ -1230,34 +1263,40 @@ function CalendarView({
         })}
       </div>
 
-      <div className="liquid-glass-card" style={{ padding: 18, textAlign: 'center' }}>
-        <div style={{ fontWeight: 550 }}>{formatDate(selected)}</div>
-        <div className="muted" style={{ marginTop: 6, fontSize: 13 }}>
-          {selectedSubs.length === 0
-            ? 'Vadesi gelen ödeme yok.'
-            : selectedSubs.map((s) => (
+      <div className="liquid-glass-card" style={{ padding: 18 }}>
+        <div style={{ fontWeight: 600, fontSize: 15, display: 'flex', alignItems: 'center', gap: 8 }}>
+          <span className="muted" style={{ fontWeight: 500, fontSize: 13 }}>{formatDate(selected)}</span>
+          {selectedSubs.length > 0 && (
+            <span className="pill" style={{ marginLeft: 'auto' }}>{selectedSubs.length} ödeme</span>
+          )}
+        </div>
+        <div style={{ marginTop: 12, display: 'flex', flexDirection: 'column', gap: 8 }}>
+          {selectedSubs.length === 0 ? (
+            <div className="cal-empty">
+              <CalendarDays size={28} />
+              <span>Bu gün için vadesi gelen ödeme yok.</span>
+            </div>
+          ) : (
+            selectedSubs.map((s) => {
+              const sc = categories.find((c) => c.id === s.categoryId)
+              return (
                 <button
                   key={s.id}
                   type="button"
+                  className="cal-day-card"
+                  style={{ ['--cat' as any]: sc?.color || '#2f6bff' } as React.CSSProperties}
                   onClick={() => onOpen(s)}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 10,
-                    width: '100%',
-                    justifyContent: 'center',
-                    marginTop: 10,
-                    padding: 10,
-                    borderRadius: 10,
-                    background: '#1e2128',
-                  }}
                 >
-                  <ServiceIcon name={s.name} accent={s.accent} size={28} iconKey={s.iconKey} />
-                  <span>
-                    {s.name} · {formatMoney(s.price, s.currency)}
-                  </span>
+                  <ServiceIcon name={s.name} accent={s.accent} size={30} iconKey={s.iconKey} />
+                  <div style={{ flex: 1, textAlign: 'left', minWidth: 0 }}>
+                    <div style={{ fontWeight: 600, fontSize: 13.5 }}>{s.name}</div>
+                    <div className="muted" style={{ fontSize: 11.5, marginTop: 2 }}>{catName(categories, s.categoryId)}</div>
+                  </div>
+                  <span className="money" style={{ fontSize: 14 }}>{formatMoney(s.price, s.currency)}</span>
                 </button>
-              ))}
+              )
+            })
+          )}
         </div>
       </div>
     </div>
@@ -1286,9 +1325,15 @@ function CategoriesView({
       {categories.map((c) => {
         const list = active.filter((s) => s.categoryId === c.id)
         const total = fromUSD(list.reduce((sum, s) => sum + monthlyUSD(s), 0), currency)
+        const bgImg = backgroundForId(c.id)
         const style = showBanner
-          ? { background: c.banner || `linear-gradient(120deg, ${c.color}55, #0f172aee)` }
-          : { background: '#1a1d24' }
+          ? {
+              background: bgImg
+                ? `linear-gradient(120deg, ${c.color}66, #0f172aee), url(${bgImg}) center/cover`
+                : `linear-gradient(120deg, ${c.color}55, #0f172aee)`,
+              ['--cat-color' as any]: c.color,
+            }
+          : { background: '#1a1d24', ['--cat-color' as any]: c.color }
         return (
           <div key={c.id} className="liquid-glass-card cat-banner" style={style}>
             <div className="cat-banner-inner">
@@ -1332,7 +1377,12 @@ function CategoriesView({
                     </div>
                   </button>
                 ))}
-                {list.length === 0 && <span className="muted" style={{ fontSize: 13 }}>Bu kategoride abonelik yok</span>}
+                {list.length === 0 && (
+                  <div className="cat-empty">
+                    <PackageOpen size={30} />
+                    <span>Bu kategoride henüz abonelik yok</span>
+                  </div>
+                )}
               </div>
             </div>
           </div>

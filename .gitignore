@@ -8,3 +8,9 @@ release
 _original_src
 e2e-results
 .e2e-user-data
+
+# diag test data
+.diag-user-data/
+scripts/diag-sidebar.mjs
+scripts/shot-redesign.mjs
+scripts/shot-cal-sel.mjs

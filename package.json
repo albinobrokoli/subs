@@ -21,7 +21,6 @@
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.1.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^4.3.4",
@@ -30,7 +29,6 @@
     "electron-vite": "^2.3.0",
     "sharp": "^0.33.5",
     "simple-icons": "^11.0.0",
-    "tailwindcss": "^4.1.0",
     "typescript": "^5.7.2",
     "vite": "^5.4.11",
     "playwright": "^1.49.1"

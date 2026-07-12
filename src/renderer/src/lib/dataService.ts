@@ -2,7 +2,6 @@ export type Category = {
   id: string
   name: string
   color: string
-  banner?: string
 }
 
 export type Subscription = {

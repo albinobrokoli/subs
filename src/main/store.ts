@@ -4,8 +4,6 @@ export type Category = {
   id: string
   name: string
   color: string
-  /** CSS gradient or image url for category banner */
-  banner?: string
 }
 
 export type Subscription = {
@@ -56,29 +54,21 @@ const DEFAULT_CATEGORIES: Category[] = [
     id: 'entertainment',
     name: 'Eğlence',
     color: '#f87171',
-    banner:
-      'linear-gradient(120deg, rgba(15,23,42,0.55), rgba(15,23,42,0.75)), url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=60) center/cover',
   },
   {
     id: 'ai',
     name: 'Yapay Zeka',
     color: '#818cf8',
-    banner:
-      'linear-gradient(120deg, rgba(15,23,42,0.55), rgba(15,23,42,0.8)), url(https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=60) center/cover',
   },
   {
     id: 'productivity',
     name: 'Verimlilik',
     color: '#38bdf8',
-    banner:
-      'linear-gradient(120deg, rgba(15,23,42,0.55), rgba(15,23,42,0.8)), url(https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=60) center/cover',
   },
   {
     id: 'travel',
     name: 'Seyahat',
     color: '#f5b544',
-    banner:
-      'linear-gradient(120deg, rgba(15,23,42,0.55), rgba(15,23,42,0.8)), url(https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=60) center/cover',
   },
 ]
 
@@ -301,9 +291,6 @@ export function addCategory(cat: Partial<Category> = {}): Category {
     id: cat.id || uid('cat'),
     name: cat.name || 'Yeni kategori',
     color: cat.color || '#3b82f6',
-    banner:
-      cat.banner ||
-      `linear-gradient(120deg, ${cat.color || '#3b82f6'}55, #0f172aee)`,
   }
   writeState({ categories: [...state.categories, record] })
   return clone(record)
