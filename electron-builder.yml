@@ -1,0 +1,21 @@
+appId: com.baran.subs
+productName: Subs
+directories:
+  output: release
+files:
+  - out/**/*
+  - package.json
+  - build/icon.png
+mac:
+  category: public.app-category.finance
+  icon: build/icon.png
+  target:
+    - target: dmg
+      arch: [arm64]
+    - target: dir
+      arch: [arm64]
+  identity: null
+  hardenedRuntime: false
+  gatekeeperAssess: false
+dmg:
+  title: Subs

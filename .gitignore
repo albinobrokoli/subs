@@ -1,0 +1,10 @@
+node_modules
+out
+dist
+release
+.DS_Store
+*.log
+.vite
+_original_src
+e2e-results
+.e2e-user-data

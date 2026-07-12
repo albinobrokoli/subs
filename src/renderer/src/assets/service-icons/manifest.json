@@ -1,0 +1,1510 @@
+{
+  "github": {
+    "name": "github",
+    "hex": "181717",
+    "file": "github.svg",
+    "kind": "svg"
+  },
+  "githubcopilot": {
+    "name": "githubcopilot",
+    "hex": "000000",
+    "file": "githubcopilot.svg",
+    "kind": "svg"
+  },
+  "google": {
+    "name": "google",
+    "hex": "4285F4",
+    "file": "google.svg",
+    "kind": "svg"
+  },
+  "googlegemini": {
+    "name": "googlegemini",
+    "hex": "8E75B2",
+    "file": "googlegemini.svg",
+    "kind": "svg"
+  },
+  "perplexity": {
+    "name": "perplexity",
+    "hex": "1FB8CD",
+    "file": "perplexity.svg",
+    "kind": "svg"
+  },
+  "x": {
+    "name": "x",
+    "hex": "000000",
+    "file": "x.svg",
+    "kind": "svg"
+  },
+  "xiaomi": {
+    "name": "xiaomi",
+    "hex": "FF6900",
+    "file": "xiaomi.svg",
+    "kind": "svg"
+  },
+  "digitalocean": {
+    "name": "digitalocean",
+    "hex": "0080FF",
+    "file": "digitalocean.svg",
+    "kind": "svg"
+  },
+  "apple": {
+    "name": "apple",
+    "hex": "000000",
+    "file": "apple.svg",
+    "kind": "svg"
+  },
+  "appletv": {
+    "name": "appletv",
+    "hex": "000000",
+    "file": "appletv.svg",
+    "kind": "svg"
+  },
+  "applemusic": {
+    "name": "applemusic",
+    "hex": "FA243C",
+    "file": "applemusic.svg",
+    "kind": "svg"
+  },
+  "icloud": {
+    "name": "icloud",
+    "hex": "3693F3",
+    "file": "icloud.svg",
+    "kind": "svg"
+  },
+  "netflix": {
+    "name": "netflix",
+    "hex": "E50914",
+    "file": "netflix.svg",
+    "kind": "svg"
+  },
+  "spotify": {
+    "name": "spotify",
+    "hex": "1ED760",
+    "file": "spotify.svg",
+    "kind": "svg"
+  },
+  "youtube": {
+    "name": "youtube",
+    "hex": "FF0000",
+    "file": "youtube.svg",
+    "kind": "svg"
+  },
+  "notion": {
+    "name": "notion",
+    "hex": "000000",
+    "file": "notion.svg",
+    "kind": "svg"
+  },
+  "figma": {
+    "name": "figma",
+    "hex": "F24E1E",
+    "file": "figma.svg",
+    "kind": "svg"
+  },
+  "discord": {
+    "name": "discord",
+    "hex": "5865F2",
+    "file": "discord.svg",
+    "kind": "svg"
+  },
+  "twitch": {
+    "name": "twitch",
+    "hex": "9146FF",
+    "file": "twitch.svg",
+    "kind": "svg"
+  },
+  "dropbox": {
+    "name": "dropbox",
+    "hex": "0061FF",
+    "file": "dropbox.svg",
+    "kind": "svg"
+  },
+  "paypal": {
+    "name": "paypal",
+    "hex": "002991",
+    "file": "paypal.svg",
+    "kind": "svg"
+  },
+  "revolut": {
+    "name": "revolut",
+    "hex": "191C1F",
+    "file": "revolut.svg",
+    "kind": "svg"
+  },
+  "n26": {
+    "name": "n26",
+    "hex": "48AC98",
+    "file": "n26.svg",
+    "kind": "svg"
+  },
+  "bytedance": {
+    "name": "bytedance",
+    "hex": "3C8CFF",
+    "file": "bytedance.svg",
+    "kind": "svg"
+  },
+  "anthropic": {
+    "name": "anthropic",
+    "hex": "191919",
+    "file": "anthropic.svg",
+    "kind": "svg"
+  },
+  "claude": {
+    "name": "claude",
+    "hex": "D97757",
+    "file": "claude.svg",
+    "kind": "svg"
+  },
+  "zoom": {
+    "name": "zoom",
+    "hex": "0B5CFF",
+    "file": "zoom.svg",
+    "kind": "svg"
+  },
+  "telegram": {
+    "name": "telegram",
+    "hex": "26A5E4",
+    "file": "telegram.svg",
+    "kind": "svg"
+  },
+  "whatsapp": {
+    "name": "whatsapp",
+    "hex": "25D366",
+    "file": "whatsapp.svg",
+    "kind": "svg"
+  },
+  "instagram": {
+    "name": "instagram",
+    "hex": "FF0069",
+    "file": "instagram.svg",
+    "kind": "svg"
+  },
+  "tiktok": {
+    "name": "tiktok",
+    "hex": "000000",
+    "file": "tiktok.svg",
+    "kind": "svg"
+  },
+  "uber": {
+    "name": "uber",
+    "hex": "000000",
+    "file": "uber.svg",
+    "kind": "svg"
+  },
+  "airbnb": {
+    "name": "airbnb",
+    "hex": "FF5A5F",
+    "file": "airbnb.svg",
+    "kind": "svg"
+  },
+  "vercel": {
+    "name": "vercel",
+    "hex": "000000",
+    "file": "vercel.svg",
+    "kind": "svg"
+  },
+  "cloudflare": {
+    "name": "cloudflare",
+    "hex": "F38020",
+    "file": "cloudflare.svg",
+    "kind": "svg"
+  },
+  "jetbrains": {
+    "name": "jetbrains",
+    "hex": "000000",
+    "file": "jetbrains.svg",
+    "kind": "svg"
+  },
+  "cursor": {
+    "name": "cursor",
+    "hex": "000000",
+    "file": "cursor.svg",
+    "kind": "svg"
+  },
+  "hbo": {
+    "name": "hbo",
+    "hex": "000000",
+    "file": "hbo.svg",
+    "kind": "svg"
+  },
+  "paramountplus": {
+    "name": "paramountplus",
+    "hex": "0064FF",
+    "file": "paramountplus.svg",
+    "kind": "svg"
+  },
+  "crunchyroll": {
+    "name": "crunchyroll",
+    "hex": "FF5E00",
+    "file": "crunchyroll.svg",
+    "kind": "svg"
+  },
+  "duolingo": {
+    "name": "duolingo",
+    "hex": "58CC02",
+    "file": "duolingo.svg",
+    "kind": "svg"
+  },
+  "evernote": {
+    "name": "evernote",
+    "hex": "00A82D",
+    "file": "evernote.svg",
+    "kind": "svg"
+  },
+  "todoist": {
+    "name": "todoist",
+    "hex": "E44332",
+    "file": "todoist.svg",
+    "kind": "svg"
+  },
+  "asana": {
+    "name": "asana",
+    "hex": "F06A6A",
+    "file": "asana.svg",
+    "kind": "svg"
+  },
+  "trello": {
+    "name": "trello",
+    "hex": "0052CC",
+    "file": "trello.svg",
+    "kind": "svg"
+  },
+  "linear": {
+    "name": "linear",
+    "hex": "5E6AD2",
+    "file": "linear.svg",
+    "kind": "svg"
+  },
+  "gitlab": {
+    "name": "gitlab",
+    "hex": "FC6D26",
+    "file": "gitlab.svg",
+    "kind": "svg"
+  },
+  "bitbucket": {
+    "name": "bitbucket",
+    "hex": "0052CC",
+    "file": "bitbucket.svg",
+    "kind": "svg"
+  },
+  "docker": {
+    "name": "docker",
+    "hex": "2496ED",
+    "file": "docker.svg",
+    "kind": "svg"
+  },
+  "patreon": {
+    "name": "patreon",
+    "hex": "000000",
+    "file": "patreon.svg",
+    "kind": "svg"
+  },
+  "substack": {
+    "name": "substack",
+    "hex": "FF6719",
+    "file": "substack.svg",
+    "kind": "svg"
+  },
+  "medium": {
+    "name": "medium",
+    "hex": "000000",
+    "file": "medium.svg",
+    "kind": "svg"
+  },
+  "strava": {
+    "name": "strava",
+    "hex": "FC4C02",
+    "file": "strava.svg",
+    "kind": "svg"
+  },
+  "grammarly": {
+    "name": "grammarly",
+    "hex": "027E6F",
+    "file": "grammarly.svg",
+    "kind": "svg"
+  },
+  "1password": {
+    "name": "1password",
+    "hex": "145FE4",
+    "file": "1password.svg",
+    "kind": "svg"
+  },
+  "lastpass": {
+    "name": "lastpass",
+    "hex": "D32D27",
+    "file": "lastpass.svg",
+    "kind": "svg"
+  },
+  "bitwarden": {
+    "name": "bitwarden",
+    "hex": "175DDC",
+    "file": "bitwarden.svg",
+    "kind": "svg"
+  },
+  "nordvpn": {
+    "name": "nordvpn",
+    "hex": "4687FF",
+    "file": "nordvpn.svg",
+    "kind": "svg"
+  },
+  "expressvpn": {
+    "name": "expressvpn",
+    "hex": "DA3940",
+    "file": "expressvpn.svg",
+    "kind": "svg"
+  },
+  "surfshark": {
+    "name": "surfshark",
+    "hex": "1EBFBF",
+    "file": "surfshark.svg",
+    "kind": "svg"
+  },
+  "setapp": {
+    "name": "setapp",
+    "hex": "E6C3A5",
+    "file": "setapp.svg",
+    "kind": "svg"
+  },
+  "raycast": {
+    "name": "raycast",
+    "hex": "FF6363",
+    "file": "raycast.svg",
+    "kind": "svg"
+  },
+  "alfred": {
+    "name": "alfred",
+    "hex": "5C1F87",
+    "file": "alfred.svg",
+    "kind": "svg"
+  },
+  "obsidian": {
+    "name": "obsidian",
+    "hex": "7C3AED",
+    "file": "obsidian.svg",
+    "kind": "svg"
+  },
+  "things": {
+    "name": "things",
+    "hex": "2473E7",
+    "file": "things.svg",
+    "kind": "svg"
+  },
+  "ticktick": {
+    "name": "ticktick",
+    "hex": "4772FA",
+    "file": "ticktick.svg",
+    "kind": "svg"
+  },
+  "playstation": {
+    "name": "playstation",
+    "hex": "0070D1",
+    "file": "playstation.svg",
+    "kind": "svg"
+  },
+  "steam": {
+    "name": "steam",
+    "hex": "000000",
+    "file": "steam.svg",
+    "kind": "svg"
+  },
+  "epicgames": {
+    "name": "epicgames",
+    "hex": "313131",
+    "file": "epicgames.svg",
+    "kind": "svg"
+  },
+  "ea": {
+    "name": "ea",
+    "hex": "000000",
+    "file": "ea.svg",
+    "kind": "svg"
+  },
+  "ubisoft": {
+    "name": "ubisoft",
+    "hex": "000000",
+    "file": "ubisoft.svg",
+    "kind": "svg"
+  },
+  "openrouter": {
+    "name": "openrouter",
+    "hex": "94A3B8",
+    "file": "openrouter.svg",
+    "kind": "svg"
+  },
+  "appstore": {
+    "name": "appstore",
+    "hex": "0D96F6",
+    "file": "appstore.svg",
+    "kind": "svg"
+  },
+  "itunes": {
+    "name": "itunes",
+    "hex": "FB5BC5",
+    "file": "itunes.svg",
+    "kind": "svg"
+  },
+  "applepodcasts": {
+    "name": "applepodcasts",
+    "hex": "9933CC",
+    "file": "applepodcasts.svg",
+    "kind": "svg"
+  },
+  "applepay": {
+    "name": "applepay",
+    "hex": "000000",
+    "file": "applepay.svg",
+    "kind": "svg"
+  },
+  "fitbit": {
+    "name": "fitbit",
+    "hex": "00B0B9",
+    "file": "fitbit.svg",
+    "kind": "svg"
+  },
+  "headspace": {
+    "name": "headspace",
+    "hex": "F47D31",
+    "file": "headspace.svg",
+    "kind": "svg"
+  },
+  "nike": {
+    "name": "nike",
+    "hex": "111111",
+    "file": "nike.svg",
+    "kind": "svg"
+  },
+  "onlyfans": {
+    "name": "onlyfans",
+    "hex": "00AFF0",
+    "file": "onlyfans.svg",
+    "kind": "svg"
+  },
+  "openai": {
+    "name": "openai",
+    "file": "openai.png",
+    "kind": "png",
+    "domain": "openai.com",
+    "source": "google-favicon"
+  },
+  "chatgpt": {
+    "name": "chatgpt",
+    "file": "chatgpt.png",
+    "kind": "png",
+    "domain": "chatgpt.com",
+    "source": "google-favicon"
+  },
+  "microsoft": {
+    "name": "microsoft",
+    "file": "microsoft.png",
+    "kind": "png",
+    "domain": "microsoft.com",
+    "source": "google-favicon"
+  },
+  "adobe": {
+    "name": "adobe",
+    "file": "adobe.png",
+    "kind": "png",
+    "domain": "adobe.com",
+    "source": "google-favicon"
+  },
+  "amazon": {
+    "name": "amazon",
+    "file": "amazon.png",
+    "kind": "png",
+    "domain": "amazon.com",
+    "source": "google-favicon"
+  },
+  "slack": {
+    "name": "slack",
+    "file": "slack.png",
+    "kind": "png",
+    "domain": "slack.com",
+    "source": "google-favicon"
+  },
+  "canva": {
+    "name": "canva",
+    "file": "canva.png",
+    "kind": "png",
+    "domain": "canva.com",
+    "source": "google-favicon"
+  },
+  "disney": {
+    "name": "disney",
+    "file": "disney.png",
+    "kind": "png",
+    "domain": "disneyplus.com",
+    "source": "google-favicon"
+  },
+  "disneyplus": {
+    "name": "disneyplus",
+    "file": "disneyplus.png",
+    "kind": "png",
+    "domain": "disneyplus.com",
+    "source": "google-favicon"
+  },
+  "hulu": {
+    "name": "hulu",
+    "file": "hulu.png",
+    "kind": "png",
+    "domain": "hulu.com",
+    "source": "google-favicon"
+  },
+  "primevideo": {
+    "name": "primevideo",
+    "file": "primevideo.png",
+    "kind": "png",
+    "domain": "primevideo.com",
+    "source": "google-favicon"
+  },
+  "xbox": {
+    "name": "xbox",
+    "file": "xbox.png",
+    "kind": "png",
+    "domain": "xbox.com",
+    "source": "google-favicon"
+  },
+  "nintendo": {
+    "name": "nintendo",
+    "file": "nintendo.png",
+    "kind": "png",
+    "domain": "nintendo.com",
+    "source": "google-favicon"
+  },
+  "midjourney": {
+    "name": "midjourney",
+    "file": "midjourney.png",
+    "kind": "png",
+    "domain": "midjourney.com",
+    "source": "google-favicon"
+  },
+  "xai": {
+    "name": "xai",
+    "file": "xai.png",
+    "kind": "png",
+    "domain": "x.ai",
+    "source": "google-favicon"
+  },
+  "volcengine": {
+    "name": "volcengine",
+    "file": "volcengine.png",
+    "kind": "png",
+    "domain": "volcengine.com",
+    "source": "google-favicon"
+  },
+  "amaysim": {
+    "name": "amaysim",
+    "file": "amaysim.png",
+    "kind": "png",
+    "domain": "amaysim.com.au",
+    "source": "google-favicon"
+  },
+  "office": {
+    "name": "office",
+    "file": "office.png",
+    "kind": "png",
+    "domain": "office.com",
+    "source": "google-favicon"
+  },
+  "onedrive": {
+    "name": "onedrive",
+    "file": "onedrive.png",
+    "kind": "png",
+    "domain": "onedrive.live.com",
+    "source": "google-favicon"
+  },
+  "outlook": {
+    "name": "outlook",
+    "file": "outlook.png",
+    "kind": "png",
+    "domain": "outlook.com",
+    "source": "google-favicon"
+  },
+  "teams": {
+    "name": "teams",
+    "file": "teams.png",
+    "kind": "png",
+    "domain": "teams.microsoft.com",
+    "source": "google-favicon"
+  },
+  "linkedin": {
+    "name": "linkedin",
+    "file": "linkedin.png",
+    "kind": "png",
+    "domain": "linkedin.com",
+    "source": "google-favicon"
+  },
+  "reddit": {
+    "name": "reddit",
+    "file": "reddit.png",
+    "kind": "png",
+    "domain": "reddit.com",
+    "source": "google-favicon"
+  },
+  "nytimes": {
+    "name": "nytimes",
+    "file": "nytimes.png",
+    "kind": "png",
+    "domain": "nytimes.com",
+    "source": "google-favicon"
+  },
+  "calm": {
+    "name": "calm",
+    "file": "calm.png",
+    "kind": "png",
+    "domain": "calm.com",
+    "source": "google-favicon"
+  },
+  "fantastical": {
+    "name": "fantastical",
+    "file": "fantastical.png",
+    "kind": "png",
+    "domain": "flexibits.com",
+    "source": "google-favicon"
+  },
+  "craft": {
+    "name": "craft",
+    "file": "craft.png",
+    "kind": "png",
+    "domain": "craft.do",
+    "source": "google-favicon"
+  },
+  "bear": {
+    "name": "bear",
+    "file": "bear.png",
+    "kind": "png",
+    "domain": "bear-writer.com",
+    "source": "google-favicon"
+  },
+  "railway": {
+    "name": "railway",
+    "file": "railway.png",
+    "kind": "png",
+    "domain": "railway.app",
+    "source": "google-favicon"
+  },
+  "supabase": {
+    "name": "supabase",
+    "file": "supabase.png",
+    "kind": "png",
+    "domain": "supabase.com",
+    "source": "google-favicon"
+  },
+  "zhipu": {
+    "name": "zhipu",
+    "file": "zhipu.png",
+    "kind": "png",
+    "domain": "zhipuai.cn",
+    "source": "google-favicon"
+  },
+  "clubsim": {
+    "name": "clubsim",
+    "file": "clubsim.png",
+    "kind": "png",
+    "domain": "clubsim.com.hk",
+    "source": "google-favicon"
+  },
+  "felix": {
+    "name": "felix",
+    "file": "felix.png",
+    "kind": "png",
+    "domain": "felixmobile.com.au",
+    "source": "google-favicon"
+  },
+  "gemini": {
+    "name": "gemini",
+    "file": "gemini.png",
+    "kind": "png",
+    "domain": "gemini.google.com",
+    "source": "google-favicon"
+  },
+  "apple_developer": {
+    "name": "apple_developer",
+    "file": "apple_developer.png",
+    "kind": "png",
+    "domain": "developer.apple.com",
+    "source": "google-favicon"
+  },
+  "youtube_premium": {
+    "name": "youtube_premium",
+    "file": "youtube_premium.png",
+    "kind": "png",
+    "domain": "youtube.com",
+    "source": "google-favicon"
+  },
+  "hbomax": {
+    "name": "hbomax",
+    "file": "hbomax.png",
+    "kind": "png",
+    "domain": "max.com",
+    "source": "google-favicon"
+  },
+  "paramount": {
+    "name": "paramount",
+    "file": "paramount.png",
+    "kind": "png",
+    "domain": "paramountplus.com",
+    "source": "google-favicon"
+  },
+  "peacock": {
+    "name": "peacock",
+    "file": "peacock.png",
+    "kind": "png",
+    "domain": "peacocktv.com",
+    "source": "google-favicon"
+  },
+  "funimation": {
+    "name": "funimation",
+    "file": "funimation.png",
+    "kind": "png",
+    "domain": "funimation.com",
+    "source": "google-favicon"
+  },
+  "mubi": {
+    "name": "mubi",
+    "file": "mubi.png",
+    "kind": "png",
+    "domain": "mubi.com",
+    "source": "google-favicon"
+  },
+  "threads": {
+    "name": "threads",
+    "file": "threads.png",
+    "kind": "png",
+    "domain": "threads.net",
+    "source": "google-favicon"
+  },
+  "bluesky": {
+    "name": "bluesky",
+    "file": "bluesky.png",
+    "kind": "png",
+    "domain": "bsky.app",
+    "source": "google-favicon"
+  },
+  "mastodon": {
+    "name": "mastodon",
+    "file": "mastodon.png",
+    "kind": "png",
+    "domain": "mastodon.social",
+    "source": "google-favicon"
+  },
+  "signal": {
+    "name": "signal",
+    "file": "signal.png",
+    "kind": "png",
+    "domain": "signal.org",
+    "source": "google-favicon"
+  },
+  "viber": {
+    "name": "viber",
+    "file": "viber.png",
+    "kind": "png",
+    "domain": "viber.com",
+    "source": "google-favicon"
+  },
+  "line": {
+    "name": "line",
+    "file": "line.png",
+    "kind": "png",
+    "domain": "line.me",
+    "source": "google-favicon"
+  },
+  "monday": {
+    "name": "monday",
+    "file": "monday.png",
+    "kind": "png",
+    "domain": "monday.com",
+    "source": "google-favicon"
+  },
+  "clickup": {
+    "name": "clickup",
+    "file": "clickup.png",
+    "kind": "png",
+    "domain": "clickup.com",
+    "source": "google-favicon"
+  },
+  "jira": {
+    "name": "jira",
+    "file": "jira.png",
+    "kind": "png",
+    "domain": "atlassian.com",
+    "source": "google-favicon"
+  },
+  "confluence": {
+    "name": "confluence",
+    "file": "confluence.png",
+    "kind": "png",
+    "domain": "atlassian.com",
+    "source": "google-favicon"
+  },
+  "kubernetes": {
+    "name": "kubernetes",
+    "file": "kubernetes.png",
+    "kind": "png",
+    "domain": "kubernetes.io",
+    "source": "google-favicon"
+  },
+  "npm": {
+    "name": "npm",
+    "file": "npm.png",
+    "kind": "png",
+    "domain": "npmjs.com",
+    "source": "google-favicon"
+  },
+  "netlify": {
+    "name": "netlify",
+    "file": "netlify.png",
+    "kind": "png",
+    "domain": "netlify.com",
+    "source": "google-favicon"
+  },
+  "heroku": {
+    "name": "heroku",
+    "file": "heroku.png",
+    "kind": "png",
+    "domain": "heroku.com",
+    "source": "google-favicon"
+  },
+  "flyio": {
+    "name": "flyio",
+    "file": "flyio.png",
+    "kind": "png",
+    "domain": "fly.io",
+    "source": "google-favicon"
+  },
+  "render": {
+    "name": "render",
+    "file": "render.png",
+    "kind": "png",
+    "domain": "render.com",
+    "source": "google-favicon"
+  },
+  "cohere": {
+    "name": "cohere",
+    "file": "cohere.png",
+    "kind": "png",
+    "domain": "cohere.ai",
+    "source": "google-favicon"
+  },
+  "mistral": {
+    "name": "mistral",
+    "file": "mistral.png",
+    "kind": "png",
+    "domain": "mistral.ai",
+    "source": "google-favicon"
+  },
+  "stabilityai": {
+    "name": "stabilityai",
+    "file": "stabilityai.png",
+    "kind": "png",
+    "domain": "stability.ai",
+    "source": "google-favicon"
+  },
+  "replicate": {
+    "name": "replicate",
+    "file": "replicate.png",
+    "kind": "png",
+    "domain": "replicate.com",
+    "source": "google-favicon"
+  },
+  "huggingface": {
+    "name": "huggingface",
+    "file": "huggingface.png",
+    "kind": "png",
+    "domain": "huggingface.co",
+    "source": "google-favicon"
+  },
+  "protonmail": {
+    "name": "protonmail",
+    "file": "protonmail.png",
+    "kind": "png",
+    "domain": "proton.me",
+    "source": "google-favicon"
+  },
+  "protonvpn": {
+    "name": "protonvpn",
+    "file": "protonvpn.png",
+    "kind": "png",
+    "domain": "protonvpn.com",
+    "source": "google-favicon"
+  },
+  "tunnelbear": {
+    "name": "tunnelbear",
+    "file": "tunnelbear.png",
+    "kind": "png",
+    "domain": "tunnelbear.com",
+    "source": "google-favicon"
+  },
+  "dashlane": {
+    "name": "dashlane",
+    "file": "dashlane.png",
+    "kind": "png",
+    "domain": "dashlane.com",
+    "source": "google-favicon"
+  },
+  "keepersecurity": {
+    "name": "keepersecurity",
+    "file": "keepersecurity.png",
+    "kind": "png",
+    "domain": "keepersecurity.com",
+    "source": "google-favicon"
+  },
+  "wise": {
+    "name": "wise",
+    "file": "wise.png",
+    "kind": "png",
+    "domain": "wise.com",
+    "source": "google-favicon"
+  },
+  "stripe": {
+    "name": "stripe",
+    "file": "stripe.png",
+    "kind": "png",
+    "domain": "stripe.com",
+    "source": "google-favicon"
+  },
+  "squareup": {
+    "name": "squareup",
+    "file": "squareup.png",
+    "kind": "png",
+    "domain": "squareup.com",
+    "source": "google-favicon"
+  },
+  "coinbase": {
+    "name": "coinbase",
+    "file": "coinbase.png",
+    "kind": "png",
+    "domain": "coinbase.com",
+    "source": "google-favicon"
+  },
+  "binance": {
+    "name": "binance",
+    "file": "binance.png",
+    "kind": "png",
+    "domain": "binance.com",
+    "source": "google-favicon"
+  },
+  "kraken": {
+    "name": "kraken",
+    "file": "kraken.png",
+    "kind": "png",
+    "domain": "kraken.com",
+    "source": "google-favicon"
+  },
+  "gog": {
+    "name": "gog",
+    "file": "gog.png",
+    "kind": "png",
+    "domain": "gog.com",
+    "source": "google-favicon"
+  },
+  "itch": {
+    "name": "itch",
+    "file": "itch.png",
+    "kind": "png",
+    "domain": "itch.io",
+    "source": "google-favicon"
+  },
+  "riotgames": {
+    "name": "riotgames",
+    "file": "riotgames.png",
+    "kind": "png",
+    "domain": "riotgames.com",
+    "source": "google-favicon"
+  },
+  "blizzard": {
+    "name": "blizzard",
+    "file": "blizzard.png",
+    "kind": "png",
+    "domain": "blizzard.com",
+    "source": "google-favicon"
+  },
+  "bethesda": {
+    "name": "bethesda",
+    "file": "bethesda.png",
+    "kind": "png",
+    "domain": "bethesda.net",
+    "source": "google-favicon"
+  },
+  "tidal": {
+    "name": "tidal",
+    "file": "tidal.png",
+    "kind": "png",
+    "domain": "tidal.com",
+    "source": "google-favicon"
+  },
+  "soundcloud": {
+    "name": "soundcloud",
+    "file": "soundcloud.png",
+    "kind": "png",
+    "domain": "soundcloud.com",
+    "source": "google-favicon"
+  },
+  "deezer": {
+    "name": "deezer",
+    "file": "deezer.png",
+    "kind": "png",
+    "domain": "deezer.com",
+    "source": "google-favicon"
+  },
+  "bandcamp": {
+    "name": "bandcamp",
+    "file": "bandcamp.png",
+    "kind": "png",
+    "domain": "bandcamp.com",
+    "source": "google-favicon"
+  },
+  "pandora": {
+    "name": "pandora",
+    "file": "pandora.png",
+    "kind": "png",
+    "domain": "pandora.com",
+    "source": "google-favicon"
+  },
+  "peloton": {
+    "name": "peloton",
+    "file": "peloton.png",
+    "kind": "png",
+    "domain": "onepeloton.com",
+    "source": "google-favicon"
+  },
+  "whoop": {
+    "name": "whoop",
+    "file": "whoop.png",
+    "kind": "png",
+    "domain": "whoop.com",
+    "source": "google-favicon"
+  },
+  "myfitnesspal": {
+    "name": "myfitnesspal",
+    "file": "myfitnesspal.png",
+    "kind": "png",
+    "domain": "myfitnesspal.com",
+    "source": "google-favicon"
+  },
+  "noom": {
+    "name": "noom",
+    "file": "noom.png",
+    "kind": "png",
+    "domain": "noom.com",
+    "source": "google-favicon"
+  },
+  "udemy": {
+    "name": "udemy",
+    "file": "udemy.png",
+    "kind": "png",
+    "domain": "udemy.com",
+    "source": "google-favicon"
+  },
+  "coursera": {
+    "name": "coursera",
+    "file": "coursera.png",
+    "kind": "png",
+    "domain": "coursera.com",
+    "source": "google-favicon"
+  },
+  "skillshare": {
+    "name": "skillshare",
+    "file": "skillshare.png",
+    "kind": "png",
+    "domain": "skillshare.com",
+    "source": "google-favicon"
+  },
+  "masterclass": {
+    "name": "masterclass",
+    "file": "masterclass.png",
+    "kind": "png",
+    "domain": "masterclass.com",
+    "source": "google-favicon"
+  },
+  "linkedinlearning": {
+    "name": "linkedinlearning",
+    "file": "linkedinlearning.png",
+    "kind": "png",
+    "domain": "linkedin.com",
+    "source": "google-favicon"
+  },
+  "khanacademy": {
+    "name": "khanacademy",
+    "file": "khanacademy.png",
+    "kind": "png",
+    "domain": "khanacademy.org",
+    "source": "google-favicon"
+  },
+  "pluralsight": {
+    "name": "pluralsight",
+    "file": "pluralsight.png",
+    "kind": "png",
+    "domain": "pluralsight.com",
+    "source": "google-favicon"
+  },
+  "box": {
+    "name": "box",
+    "file": "box.png",
+    "kind": "png",
+    "domain": "box.com",
+    "source": "google-favicon"
+  },
+  "mega": {
+    "name": "mega",
+    "file": "mega.png",
+    "kind": "png",
+    "domain": "mega.nz",
+    "source": "google-favicon"
+  },
+  "pcloud": {
+    "name": "pcloud",
+    "file": "pcloud.png",
+    "kind": "png",
+    "domain": "pcloud.com",
+    "source": "google-favicon"
+  },
+  "protondrive": {
+    "name": "protondrive",
+    "file": "protondrive.png",
+    "kind": "png",
+    "domain": "proton.me",
+    "source": "google-favicon"
+  },
+  "syncthing": {
+    "name": "syncthing",
+    "file": "syncthing.png",
+    "kind": "png",
+    "domain": "syncthing.net",
+    "source": "google-favicon"
+  },
+  "mullvad": {
+    "name": "mullvad",
+    "file": "mullvad.png",
+    "kind": "png",
+    "domain": "mullvad.net",
+    "source": "google-favicon"
+  },
+  "windscribe": {
+    "name": "windscribe",
+    "file": "windscribe.png",
+    "kind": "png",
+    "domain": "windscribe.com",
+    "source": "google-favicon"
+  },
+  "amazonamazonprime": {
+    "name": "amazonamazonprime",
+    "file": "amazonamazonprime.png",
+    "kind": "png",
+    "domain": "primevideo.com",
+    "source": "google-favicon"
+  },
+  "doordash": {
+    "name": "doordash",
+    "file": "doordash.png",
+    "kind": "png",
+    "domain": "doordash.com",
+    "source": "google-favicon"
+  },
+  "ubereats": {
+    "name": "ubereats",
+    "file": "ubereats.png",
+    "kind": "png",
+    "domain": "ubereats.com",
+    "source": "google-favicon"
+  },
+  "grubhub": {
+    "name": "grubhub",
+    "file": "grubhub.png",
+    "kind": "png",
+    "domain": "grubhub.com",
+    "source": "google-favicon"
+  },
+  "instacart": {
+    "name": "instacart",
+    "file": "instacart.png",
+    "kind": "png",
+    "domain": "instacart.com",
+    "source": "google-favicon"
+  },
+  "walmart": {
+    "name": "walmart",
+    "file": "walmart.png",
+    "kind": "png",
+    "domain": "walmart.com",
+    "source": "google-favicon"
+  },
+  "bitly": {
+    "name": "bitly",
+    "file": "bitly.png",
+    "kind": "png",
+    "domain": "bitly.com",
+    "source": "google-favicon"
+  },
+  "quillbot": {
+    "name": "quillbot",
+    "file": "quillbot.png",
+    "kind": "png",
+    "domain": "quillbot.com",
+    "source": "google-favicon"
+  },
+  "trendyol": {
+    "file": "tk_trendyol.png",
+    "kind": "png",
+    "name": "trendyol"
+  },
+  "hepsiburada": {
+    "file": "tk_hepsiburada.png",
+    "kind": "png",
+    "name": "hepsiburada"
+  },
+  "getir": {
+    "file": "tk_getir.png",
+    "kind": "png",
+    "name": "getir"
+  },
+  "yemeksepeti": {
+    "file": "tk_yemeksepeti.png",
+    "kind": "png",
+    "name": "yemeksepeti"
+  },
+  "turkcell": {
+    "file": "tk_turkcell.png",
+    "kind": "png",
+    "name": "turkcell"
+  },
+  "migros": {
+    "file": "tk_migros.png",
+    "kind": "png",
+    "name": "migros"
+  },
+  "carrefoursa": {
+    "file": "tk_carrefoursa.png",
+    "kind": "png",
+    "name": "carrefoursa"
+  },
+  "a101": {
+    "file": "tk_a101.png",
+    "kind": "png",
+    "name": "a101"
+  },
+  "sokmarket": {
+    "file": "tk_sokmarket.png",
+    "kind": "png",
+    "name": "sokmarket"
+  },
+  "teknosa": {
+    "file": "tk_teknosa.png",
+    "kind": "png",
+    "name": "teknosa"
+  },
+  "mediamarkt": {
+    "file": "tk_mediamarkt.png",
+    "kind": "png",
+    "name": "mediamarkt"
+  },
+  "boyner": {
+    "file": "tk_boyner.png",
+    "kind": "png",
+    "name": "boyner"
+  },
+  "defacto": {
+    "file": "tk_defacto.png",
+    "kind": "png",
+    "name": "defacto"
+  },
+  "mavi": {
+    "file": "tk_mavi.png",
+    "kind": "png",
+    "name": "mavi"
+  },
+  "lcwaikiki": {
+    "file": "tk_lcwaikiki.png",
+    "kind": "png",
+    "name": "lcwaikiki"
+  },
+  "vestel": {
+    "file": "tk_vestel.png",
+    "kind": "png",
+    "name": "vestel"
+  },
+  "beko": {
+    "file": "tk_beko.png",
+    "kind": "png",
+    "name": "beko"
+  },
+  "sahibinden": {
+    "file": "tk_sahibinden.png",
+    "kind": "png",
+    "name": "sahibinden"
+  },
+  "garanti": {
+    "file": "tk_garanti.png",
+    "kind": "png",
+    "name": "garanti"
+  },
+  "isbank": {
+    "file": "tk_isbank.png",
+    "kind": "png",
+    "name": "isbank"
+  },
+  "akbank": {
+    "file": "tk_akbank.png",
+    "kind": "png",
+    "name": "akbank"
+  },
+  "yapikredi": {
+    "file": "tk_yapikredi.png",
+    "kind": "png",
+    "name": "yapikredi"
+  },
+  "pttavm": {
+    "file": "tk_pttavm.png",
+    "kind": "png",
+    "name": "pttavm"
+  },
+  "trt": {
+    "file": "tk_trt.png",
+    "kind": "png",
+    "name": "trt"
+  },
+  "eksiduyuru": {
+    "file": "tk_eksiduyuru.png",
+    "kind": "png",
+    "name": "eksiduyuru"
+  },
+  "donanimhaber": {
+    "file": "tk_donanimhaber.png",
+    "kind": "png",
+    "name": "donanimhaber"
+  },
+  "trendyolgo": {
+    "file": "tk_trendyolgo.png",
+    "kind": "png",
+    "name": "trendyolgo"
+  },
+  "papara": {
+    "file": "tk_papara.png",
+    "kind": "png",
+    "name": "papara"
+  },
+  "param": {
+    "file": "tk_param.png",
+    "kind": "png",
+    "name": "param"
+  },
+  "hurriyet": {
+    "file": "tk_hurriyet.png",
+    "kind": "png",
+    "name": "hurriyet"
+  },
+  "sabah": {
+    "file": "tk_sabah.png",
+    "kind": "png",
+    "name": "sabah"
+  },
+  "milliyet": {
+    "file": "tk_milliyet.png",
+    "kind": "png",
+    "name": "milliyet"
+  },
+  "cnnturk": {
+    "file": "tk_cnnturk.png",
+    "kind": "png",
+    "name": "cnnturk"
+  },
+  "exxen": {
+    "file": "tk_exxen.png",
+    "kind": "png",
+    "name": "exxen"
+  },
+  "puhutv": {
+    "file": "tk_puhutv.png",
+    "kind": "png",
+    "name": "puhutv"
+  },
+  "tabii": {
+    "file": "tk_tabii.png",
+    "kind": "png",
+    "name": "tabii"
+  },
+  "tivibu": {
+    "file": "tk_tivibu.png",
+    "kind": "png",
+    "name": "tivibu"
+  },
+  "beinsports": {
+    "file": "tk_beinsports.png",
+    "kind": "png",
+    "name": "beinsports"
+  },
+  "watsons": {
+    "file": "tk_watsons.png",
+    "kind": "png",
+    "name": "watsons"
+  },
+  "gratis": {
+    "file": "tk_gratis.png",
+    "kind": "png",
+    "name": "gratis"
+  },
+  "macrocenter": {
+    "file": "tk_macrocenter.png",
+    "kind": "png",
+    "name": "macrocenter"
+  },
+  "biletix": {
+    "file": "tk_biletix.png",
+    "kind": "png",
+    "name": "biletix"
+  },
+  "toyzzshop": {
+    "file": "tk_toyzzshop.png",
+    "kind": "png",
+    "name": "toyzzshop"
+  },
+  "joker": {
+    "file": "tk_joker.png",
+    "kind": "png",
+    "name": "joker"
+  },
+  "bim": {
+    "file": "tk_bim.png",
+    "kind": "png",
+    "name": "bim"
+  },
+  "superonline": {
+    "file": "tk_superonline.png",
+    "kind": "png",
+    "name": "superonline"
+  },
+  "millenicom": {
+    "file": "tk_millenicom.png",
+    "kind": "png",
+    "name": "millenicom"
+  },
+  "n11": {
+    "file": "tk_n11.png",
+    "kind": "png",
+    "name": "n11"
+  },
+  "hepsipay": {
+    "file": "tk_hepsipay.png",
+    "kind": "png",
+    "name": "hepsipay"
+  },
+  "paycell": {
+    "file": "tk_paycell.png",
+    "kind": "png",
+    "name": "paycell"
+  },
+  "turkishairlines": {
+    "file": "tk_turkishairlines.png",
+    "kind": "png",
+    "name": "turkishairlines"
+  },
+  "pegasus": {
+    "file": "tk_pegasus.png",
+    "kind": "png",
+    "name": "pegasus"
+  },
+  "sunexpress": {
+    "file": "tk_sunexpress.png",
+    "kind": "png",
+    "name": "sunexpress"
+  }
+}

@@ -1,26 +1,70 @@
 {
-  "name": "sublist",
-  "version": "0.1.0",
+  "name": "subs",
+  "version": "1.2.0",
+  "description": "Subs — macOS subscription manager",
+  "main": "./out/main/index.js",
+  "author": "Baran",
+  "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "dist": "npm run build && electron-builder --mac",
+    "dist:dir": "npm run build && electron-builder --mac --dir",
+    "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
-    "next": "^16.0.0",
+    "electron-store": "^8.2.0",
+    "lucide-react": "^0.469.0",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "lucide-react": "^0.469.0"
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "@types/node": "^22",
+    "@tailwindcss/vite": "^4.1.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "typescript": "^5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^34.0.0",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^2.3.0",
+    "sharp": "^0.33.5",
+    "simple-icons": "^11.0.0",
     "tailwindcss": "^4.1.0",
-    "@tailwindcss/postcss": "^4.1.0",
-    "postcss": "^8"
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11",
+    "playwright": "^1.49.1"
+  },
+  "build": {
+    "appId": "com.baran.subs",
+    "productName": "Subs",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "out/**/*",
+      "package.json",
+      "build/icon.png"
+    ],
+    "mac": {
+      "category": "public.app-category.finance",
+      "icon": "build/icon.png",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": ["arm64"]
+        },
+        {
+          "target": "dir",
+          "arch": ["arm64"]
+        }
+      ],
+      "identity": null,
+      "hardenedRuntime": false,
+      "gatekeeperAssess": false
+    },
+    "dmg": {
+      "title": "Subs"
+    }
   }
 }
