@@ -256,36 +256,42 @@ function SubscriptionCard({
   const soon = daysUntil(sub.nextDue) <= 7 && daysUntil(sub.nextDue) >= 0
 
   return (
-    <div className="glass-2 card-sheen group animate-rise relative flex flex-col rounded-2xl p-5">
-      <div className="flex items-start gap-3">
+    <div className="glass-2 card-sheen card-lift group animate-rise relative flex flex-col rounded-[22px] p-6">
+      <div className="flex items-start gap-3.5">
         <ServiceIcon name={sub.name} accent={sub.accent} />
         <div className="min-w-0 flex-1">
-          <h3 className="truncate text-[15px] font-semibold text-foreground">{sub.name}</h3>
-          <p className="text-xs text-muted">
-            {sub.plan} <span className="opacity-50">·</span> {catName(sub.categoryId)}
+          <h3 className="truncate text-[15px] font-semibold tracking-tight text-foreground">{sub.name}</h3>
+          <p className="mt-0.5 text-xs text-faint">
+            {sub.plan} <span className="px-0.5">·</span> {catName(sub.categoryId)}
           </p>
         </div>
-        <div className="flex items-center gap-1.5 text-muted">
-          {sub.plan === "annual" && <Leaf size={14} className="text-positive/80" />}
-          <Bell size={15} className="opacity-60" />
+        <div className="flex items-center gap-1.5 text-faint">
+          {sub.plan === "annual" && <Leaf size={14} className="text-positive/70" />}
+          <Bell size={15} />
         </div>
       </div>
 
-      {sub.note && <p className="mt-3 line-clamp-2 text-[13px] leading-relaxed text-muted">{sub.note}</p>}
+      {sub.note && <p className="mt-3.5 line-clamp-2 text-[13px] leading-relaxed text-faint">{sub.note}</p>}
 
-      <div className="mt-auto flex items-end justify-between pt-5">
-        <div>
-          <p className={`text-xl font-semibold ${free ? "text-muted" : "text-positive"}`}>{displayPrice}</p>
-        </div>
+      <div className="mt-auto flex items-end justify-between pt-6">
+        <p
+          className={`text-[26px] font-semibold leading-none tracking-tight tabular-nums ${
+            free ? "text-faint" : "text-foreground"
+          }`}
+        >
+          {displayPrice}
+        </p>
         <PaymentBadge method={sub.paymentMethod} />
       </div>
 
-      <div className="mt-3 flex items-center justify-between border-t border-white/8 pt-3 text-xs text-muted">
-        <span>
-          {sub.nextDue ? "Next Due" : "No renewal"}
-          {soon && <span className="ml-2 rounded-full bg-accent/25 px-2 py-0.5 text-accent">soon</span>}
+      <div className="mt-4 flex items-center justify-between border-t border-white/[0.06] pt-3.5 text-xs">
+        <span className="text-faint">
+          {sub.nextDue ? "Next due" : "No renewal"}
+          {soon && (
+            <span className="ml-2 rounded-full bg-accent/20 px-2 py-0.5 font-medium text-accent">soon</span>
+          )}
         </span>
-        <span className={soon ? "text-foreground" : ""}>{formatDate(sub.nextDue)}</span>
+        <span className={soon ? "font-medium text-foreground" : "text-muted"}>{formatDate(sub.nextDue)}</span>
       </div>
 
       {/* hover actions */}
@@ -543,6 +549,7 @@ export default function SubscriptionManager() {
   }, [subscriptions])
 
   const title = isCategoryView ? activeCategory!.name : view === "all" ? "All Subscriptions" : cap(view as string)
+  const heroColor = activeCategory?.color ?? "#8b8ff0"
 
   /* actions */
   const handleSave = (data: any) => {
@@ -645,32 +652,34 @@ export default function SubscriptionManager() {
           {/* scroll area */}
           <div className="no-scrollbar flex-1 overflow-y-auto px-5 py-5">
             {/* summary hero */}
-            <section
-              className="glass-2 card-sheen relative mb-6 overflow-hidden rounded-2xl p-6"
-              style={{
-                background: isCategoryView
-                  ? `linear-gradient(135deg, ${activeCategory!.color}33, rgba(24,28,44,0.6) 60%)`
-                  : undefined,
-              }}
-            >
+            <section className="glass card-sheen relative mb-7 overflow-hidden rounded-[26px] p-7">
+              {/* atmospheric, blurred, category-tinted glow sitting behind the glass */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 -z-10"
+                style={{ background: heroAtmosphere(heroColor) }}
+              />
+
               <div className="flex items-center gap-2.5">
                 <span
-                  className="h-3 w-3 rounded-full"
-                  style={{ background: activeCategory?.color ?? "#6d7dff" }}
+                  className="h-3.5 w-3.5 rounded-full"
+                  style={{ background: heroColor, boxShadow: `0 0 16px ${heroColor}` }}
                 />
-                <h2 className="text-xl font-semibold">{title}</h2>
+                <h2 className="text-xl font-semibold tracking-tight">{title}</h2>
               </div>
 
-              <div className="mt-5 flex flex-wrap items-end gap-x-12 gap-y-4">
+              <div className="mt-6 flex flex-wrap items-end gap-x-14 gap-y-5">
                 <div>
-                  <p className="text-xs uppercase tracking-wide text-muted">Total due</p>
-                  <p className="mt-1 text-2xl font-semibold text-foreground">{formatMoney(totalDue, currency)}</p>
+                  <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-faint">Total due</p>
+                  <p className="mt-1.5 text-[32px] font-semibold leading-none tracking-tight tabular-nums text-foreground">
+                    {formatMoney(totalDue, currency)}
+                  </p>
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wide text-muted">
-                    Estimated total <span className="lowercase opacity-60">/ {period.toLowerCase()}</span>
+                  <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-faint">
+                    Estimated <span className="lowercase tracking-normal">/ {period.toLowerCase()}</span>
                   </p>
-                  <p className="mt-1 text-2xl font-semibold text-accent-2">
+                  <p className="mt-1.5 text-[32px] font-semibold leading-none tracking-tight tabular-nums text-foreground">
                     {formatMoney(estimatedTotal, currency)}
                   </p>
                 </div>
@@ -679,7 +688,7 @@ export default function SubscriptionManager() {
               {archivedCount > 0 && (
                 <button
                   onClick={toggleArchived}
-                  className="mt-5 inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-foreground"
+                  className="mt-6 inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-foreground"
                 >
                   <span
                     className={`flex h-4 w-4 items-center justify-center rounded-[5px] border transition-colors ${
@@ -770,4 +779,15 @@ export default function SubscriptionManager() {
 
 function cap(s: string) {
   return s.charAt(0).toUpperCase() + s.slice(1)
+}
+
+/* atmospheric, blurred, category-tinted glow used behind the hero glass.
+   `color` is a 6-digit hex; alpha suffixes produce the layered nebula. */
+function heroAtmosphere(color: string) {
+  return [
+    `radial-gradient(135% 155% at 14% -28%, ${color}99, transparent 50%)`,
+    `radial-gradient(120% 135% at 104% -12%, ${color}5c, transparent 54%)`,
+    `radial-gradient(115% 150% at 74% 132%, ${color}3d, transparent 56%)`,
+    `linear-gradient(150deg, rgba(20, 22, 36, 0.28), rgba(8, 9, 15, 0.52))`,
+  ].join(", ")
 }
