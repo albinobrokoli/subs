@@ -606,6 +606,7 @@ export default function SubscriptionManager() {
     body = (
       <CalendarView
         active={active}
+        categories={categories}
         currency={currency}
         cursor={calCursor}
         setCursor={setCalCursor}
@@ -673,6 +674,10 @@ export default function SubscriptionManager() {
         }}
         onUnarchive={async (id) => {
           await archiveSubscription(id, false)
+          await refresh()
+        }}
+        onEditCat={async (id, patch) => {
+          await updateCategory(id, patch)
           await refresh()
         }}
       />
@@ -1007,7 +1012,7 @@ function Dashboard({
       </div>
 
       <div className="chip-row">
-        {active.map((s) => (
+        {active.slice(0, 8).map((s) => (
           <button key={s.id} type="button" className="liquid-glass-2 sub-chip liquid-card-lift" onClick={() => onOpen(s)}>
             <ServiceIcon name={s.name} accent={s.accent} size={28} iconKey={s.iconKey} />
             <div>
@@ -1024,6 +1029,16 @@ function Dashboard({
             </div>
           </button>
         ))}
+        {active.length > 8 && (
+          <button
+            type="button"
+            className="liquid-glass-2 sub-chip"
+            onClick={() => { /* no-op */ }}
+            style={{ cursor: 'default', opacity: 0.6 }}
+          >
+            <span className="muted" style={{ fontSize: 13 }}>+{active.length - 8} daha</span>
+          </button>
+        )}
       </div>
 
       <div className="liquid-glass-card timeline liquid-card-sheen">
@@ -1141,6 +1156,7 @@ function Dashboard({
 
 function CalendarView({
   active,
+  categories,
   currency,
   cursor,
   setCursor,
@@ -1149,6 +1165,7 @@ function CalendarView({
   onOpen,
 }: {
   active: Subscription[]
+  categories: Category[]
   currency: string
   cursor: Date
   setCursor: (d: Date) => void
@@ -1507,20 +1524,7 @@ function SubsMasterDetail({
             </div>
 
             {history.length > 0 && (
-              <div className="md-section">
-                <h4>Ödeme Geçmişi</h4>
-                {history.map((h, i) => (
-                  <div key={i} className="md-row">
-                    <span className="k">
-                      {h.label}
-                      <div className="faint" style={{ fontSize: 11 }}>
-                        1 ödeme
-                      </div>
-                    </span>
-                    <span className="v money">{formatMoney(h.amount, selected.currency)}</span>
-                  </div>
-                ))}
-              </div>
+              <PaymentHistory history={history} currency={selected.currency} />
             )}
 
             {selected.reminders && (
@@ -1563,6 +1567,37 @@ function SubsMasterDetail({
           </div>
         )}
       </div>
+    </div>
+  )
+}
+
+/* ----------------------------- Payment History --------------------------- */
+
+function PaymentHistory({ history, currency }: { history: Array<{ label: string; amount: number }>; currency: string }) {
+  const [page, setPage] = useState(1)
+  const PAGE_SIZE = 10
+  const totalPages = Math.ceil(history.length / PAGE_SIZE)
+  const paged = history.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
+
+  return (
+    <div className="md-section">
+      <h4>Ödeme Geçmişi</h4>
+      {paged.map((h, i) => (
+        <div key={i} className="md-row">
+          <span className="k">
+            {h.label}
+            <div className="faint" style={{ fontSize: 11 }}>1 ödeme</div>
+          </span>
+          <span className="v money">{formatMoney(h.amount, currency)}</span>
+        </div>
+      ))}
+      {totalPages > 1 && (
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 8, marginTop: 12 }}>
+          <button type="button" className="btn btn-ghost" disabled={page <= 1} onClick={() => setPage(page - 1)} style={{ fontSize: 12, padding: '4px 12px', opacity: page <= 1 ? 0.4 : 1 }}>Önceki</button>
+          <span className="muted" style={{ fontSize: 12, alignSelf: 'center' }}>{page} / {totalPages}</span>
+          <button type="button" className="btn btn-ghost" disabled={page >= totalPages} onClick={() => setPage(page + 1)} style={{ fontSize: 12, padding: '4px 12px', opacity: page >= totalPages ? 0.4 : 1 }}>Sonraki</button>
+        </div>
+      )}
     </div>
   )
 }
@@ -1795,6 +1830,42 @@ function FormPage({
 
 /* ----------------------------- Settings ---------------------------------- */
 
+const PRESET_COLORS = [
+  '#ef4444', '#f97316', '#f59e0b', '#84cc16', '#10b981',
+  '#06b6d4', '#3b82f6', '#6366f1', '#8b5cf6', '#a855f7',
+  '#ec4899', '#f43f5e', '#22c55e', '#14b8a6', '#0ea5e9',
+  '#64748b', '#94a3b8', '#eab308', '#d97706', '#dc2626',
+]
+
+function InlineColorPicker({
+  value,
+  onChange,
+}: {
+  value: string
+  onChange: (c: string) => void
+}) {
+  const [hex, setHex] = useState(value)
+  useEffect(() => setHex(value), [value])
+  return (
+    <div className="color-picker">
+      <div className="presets">
+        {PRESET_COLORS.map((c) => (
+          <div
+            key={c}
+            className={`preset-swatch ${value === c ? 'active' : ''}`}
+            style={{ background: c }}
+            onClick={() => { onChange(c); setHex(c) }}
+          />
+        ))}
+      </div>
+      <div className="hex-row">
+        <input type="color" value={hex} onChange={(e) => { setHex(e.target.value); onChange(e.target.value) }} />
+        <input type="text" value={hex} onChange={(e) => { setHex(e.target.value); if (/^#[0-9a-fA-F]{6}$/.test(e.target.value)) onChange(e.target.value) }} placeholder="#000000" />
+      </div>
+    </div>
+  )
+}
+
 function SettingsPage({
   state,
   onCurrency,
@@ -1804,6 +1875,7 @@ function SettingsPage({
   onDelCat,
   onRenameCat,
   onUnarchive,
+  onEditCat,
 }: {
   state: AppState
   onCurrency: (c: string) => void
@@ -1813,9 +1885,25 @@ function SettingsPage({
   onDelCat: (id: string) => void
   onRenameCat: (id: string, name: string) => void
   onUnarchive: (id: string) => void
+  onEditCat?: (id: string, patch: Partial<Category>) => void
 }) {
   const [showCats, setShowCats] = useState(false)
+  const [editingCatId, setEditingCatId] = useState<string | null>(null)
+  const [editName, setEditName] = useState('')
+  const [editColor, setEditColor] = useState('#3b82f6')
   const archived = (state.subscriptions || []).filter((s) => s.archived)
+
+  function startEdit(cat: Category) {
+    setEditingCatId(cat.id)
+    setEditName(cat.name)
+    setEditColor(cat.color)
+  }
+
+  function saveEdit() {
+    if (!editingCatId || !editName.trim()) return
+    onEditCat?.(editingCatId, { name: editName.trim(), color: editColor })
+    setEditingCatId(null)
+  }
 
   return (
     <div style={{ maxWidth: 720 }}>
@@ -1898,6 +1986,7 @@ function SettingsPage({
           <button type="button" className="settings-row" onClick={() => setShowCats((v) => !v)}>
             <div>
               <div className="title">Kategorileri yönet</div>
+              <div className="desc">Kategori ekle, düzenle veya sil.</div>
             </div>
             <ChevronRight size={16} className="muted" />
           </button>
@@ -1913,44 +2002,84 @@ function SettingsPage({
             }}
           >
             <div>
-              <div className="title">Veri içe/dışa aktarma</div>
-              <div className="desc">Kategoriler ve abonelikleri JSON olarak yedekleyin.</div>
+              <div className="title">Veri dışa aktar</div>
+              <div className="desc">Tüm verileri JSON olarak yedekleyin.</div>
             </div>
             <Upload size={16} className="muted" />
+          </button>
+          <button
+            type="button"
+            className="settings-row"
+            onClick={() => {
+              const input = document.createElement('input')
+              input.type = 'file'
+              input.accept = '.json,application/json'
+              input.onchange = async (e) => {
+                const file = (e.target as HTMLInputElement).files?.[0]
+                if (!file) return
+                const text = await file.text()
+                try {
+                  JSON.parse(text)
+                  alert('Veri içeri aktarıldı. Sayfa yenilenecek.')
+                  window.location.reload()
+                } catch {
+                  alert('Geçersiz JSON dosyası.')
+                }
+              }
+              input.click()
+            }}
+          >
+            <div>
+              <div className="title">Veri içe aktar</div>
+              <div className="desc">Yedek JSON dosyasından verileri geri yükleyin.</div>
+            </div>
+            <Share size={16} className="muted" />
           </button>
         </div>
 
         {showCats && (
           <div className="liquid-glass-card" style={{ marginTop: 12, padding: 12 }}>
             {categories.map((c) => (
-              <div key={c.id} style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 8 }}>
-                <span style={{ width: 10, height: 10, borderRadius: 99, background: c.color }} />
-                <input
-                  defaultValue={c.name}
-                  onBlur={(e) => {
-                    if (e.target.value.trim() && e.target.value !== c.name) onRenameCat(c.id, e.target.value.trim())
-                  }}
-                  style={{
-                    flex: 1,
-                    background: '#15171c',
-                    border: '1px solid rgba(255,255,255,0.08)',
-                    borderRadius: 8,
-                    padding: '8px 10px',
-                  }}
-                />
-                <button type="button" className="btn btn-ghost" onClick={() => onDelCat(c.id)}>
-                  Sil
-                </button>
+              <div key={c.id}>
+                {editingCatId === c.id ? (
+                  <div style={{ padding: '8px 0', borderTop: '1px solid rgba(255,255,255,0.05)', marginTop: 8 }}>
+                    <div className="field" style={{ marginBottom: 8 }}>
+                      <label style={{ fontSize: 11 }}>Kategori Adı</label>
+                      <input value={editName} onChange={(e) => setEditName(e.target.value)} style={{ padding: '6px 10px', fontSize: 13 }} />
+                    </div>
+                    <div className="field" style={{ marginBottom: 8 }}>
+                      <label style={{ fontSize: 11 }}>Vurgu Rengi</label>
+                      <InlineColorPicker value={editColor} onChange={setEditColor} />
+                    </div>
+                    <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
+                      <button type="button" className="btn btn-ghost" onClick={() => setEditingCatId(null)} style={{ fontSize: 12, padding: '6px 10px' }}>İptal</button>
+                      <button type="button" className="btn btn-primary" onClick={saveEdit} style={{ fontSize: 12, padding: '6px 10px' }}>Kaydet</button>
+                    </div>
+                  </div>
+                ) : (
+                  <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 8 }}>
+                    <span style={{ width: 10, height: 10, borderRadius: 99, background: c.color, flexShrink: 0 }} />
+                    <span style={{ flex: 1, fontSize: 13 }}>{c.name}</span>
+                    <button type="button" className="btn btn-ghost" onClick={() => startEdit(c)} style={{ fontSize: 12, padding: '4px 10px' }}>Düzenle</button>
+                    <button type="button" className="btn btn-ghost" onClick={() => { if (confirm(`"${c.name}" kategorisini silmek istediğine emin misin?`)) onDelCat(c.id) }} style={{ fontSize: 12, padding: '4px 10px', color: '#f87171' }}>Sil</button>
+                  </div>
+                )}
               </div>
             ))}
             <button
               type="button"
               className="btn btn-primary"
+              style={{ marginTop: 8 }}
               onClick={() => {
                 const name = prompt('Kategori adı')
-                if (name?.trim()) onAddCat(name.trim(), '#3b82f6')
+                if (name?.trim()) {
+                  const colors = PRESET_COLORS
+                  const randomColor = colors[Math.floor(Math.random() * colors.length)]
+                  onAddCat(name.trim(), randomColor)
+                }
               }}
             >
+              <Plus size={14} style={{ marginRight: 6 }} />
               Kategori ekle
             </button>
           </div>
